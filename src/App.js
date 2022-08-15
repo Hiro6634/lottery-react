@@ -10,7 +10,8 @@ class App extends React.Component {
   state = { 
     manager: '',
     players: [],
-    balance: ''
+    balance: '',
+    value: ''
   };
 
   async componentDidMount(){
@@ -32,6 +33,21 @@ class App extends React.Component {
           There are currently {this.state.players.length} people entered, 
           competing to win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
           </p>
+
+          <hr/>
+
+          <form>
+            <h4>Want to tryyour luck?</h4>
+            <div>
+              <label>Amount of ether to enter</label>
+              <input
+                value = {this.state.value}
+                onChange={event => this.setState({ value: event.target.valiue}) }
+              />
+            </div>
+            <button>Enter</button>
+          </form>
+
       </div>
     );
   }
