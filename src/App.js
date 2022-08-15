@@ -7,11 +7,7 @@ import './App.css';
 
 class App extends React.Component {
 
-  constructor(props){
-    super(props);
-    console.log("Constructor");
-    this.state = {manager: ''};
-  }
+  state = { manager: ''};
 
   async componentDidMount(){
     let manager;
